@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
+    <script src="js/recipes.js"></script>
+  </head>
+  <body>
+    <header class="header container">
+      <h1 class="logo"><span>Zaplanuj</span><span>Jedzonko</span></h1>
+      <div class="name-logo"><span id="localsname">Imię</span><i class="fas fa-user-circle"></i></div>
+    </header>
+    <main>
+    <section class="container">
+      <div class="row content">
+        <div class="col-2 side-nav">
+          <nav>
+            <ul>
+              <li>
+                <a href="app.html">Pulpit<i class="fas fa-chevron-right icon-nav"></i></a>
+              </li>
+              <li>
+                <a href="recipes.html" class="border-left">Przepisy<i class="fas fa-chevron-right icon-nav"></i></a>
+              </li>
+              <li>
+                <a href="schedules.html">Plany<i class="fas fa-chevron-right icon-nav"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-10 content-right">
+          <div class="recipe-container">
+            <div class="head-container">
+              <h3 class="recipe-list-text">LISTA PRZEPISOW</h3>
+              <a href="#" id="addrecipe"><i class="fas fa-plus-square fa-2x"></i></a>
+            </div>
+            <table class="recipes-table">
+              <tbody id="recipes-table">
+                <tr class="table-row">
+                  <th>ID</th>
+                  <th>NAZWA</th>
+                  <th>OPIS</th>
+                  <th>AKCJE</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h1 class=" unvisible" id="beforelogin">Najpierw się zaloguj, żeby wyswietlic przepisy!</h1>
+<!--Kod Rafal dla Dodawania przepisu-->
+          <div class=" unvisible" id="popup">
+            <div class="addnewrecipe pl-30 pr-30">
+              <div>
+                <h1>NOWY PRZEPIS</h1><span id="alertsavedrecip"></span><button class="generalButton" id="closerecipe">Zapisz i zamknij</button>
+              </div>
+              <div class="row pt-10">
+                <div class="col-3 left">
+                  <h1>Nazwa przepisu</h1>
+                </div>
+                <div class="col-8 left">
+                  <input id="namerecipe" type="text" name="text" placeholder="">
+                </div>
+              </div>
+              <div class="row pt-10">
+                <div class="col-3 left">
+                  <h1>Opis przepisu</h1>
+                </div>
+                <div class="col-8 left">
+                  <textarea id="opisrecipe" type="textarea" name="text" placeholder=""></textarea>
+                </div>
+              </div>
+              <div class="row pt-10">
+                <div class="col-6 left ">
+                  <h1 class="underboder">INSTRUKCJE</h1>
+                </div>
+                <div class="col-6 left">
+                  <h1 class="underboder">SKŁADNIKI</h1>
+                </div>
+              </div>
+              <div class="row pt-10">
+                <div class="col-6 left">
+                  <textarea id="instruktion" type="textarea" name="text" placeholder="" style="width: 90% "></textarea><i class="fas fa-plus-square" id="addinstruktion"></i>
+                </div>
+                <div class="col-6 left">
+                  <input id="skladniki" type="text" name="text" placeholder="" style="width: 90% "><i class="fas fa-plus-square" id="addskladniki"></i>
+                </div>
+              </div>
+              <div class="row pt-20" style="height: 40%">
+                <div class="col-6 left instrukcion-content">
+                  <ul>
+
+                  </ul>
+                </div>
+                <div class="col-6 left skladniki-content">
+                  <ul>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+    </section>
+    </main>
+  </body>
+</html>

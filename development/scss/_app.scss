@@ -1,0 +1,625 @@
+//Zadanie 2.1
+
+
+.logo{
+  font-family: 'Charmonman', cursive;
+  margin-left: 30px;
+  span{
+    color:white;
+  }
+  span:nth-last-child(1){
+    color:$logoColor;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  background: $headingAndColumns;
+  .name-logo {
+    margin-right: 30px;
+    color: $logoColor;
+    font-size: 2.5rem;
+    span {
+      color: white;
+      font-size: 1.5rem;
+      margin-right: 20px;
+    }
+  }
+}
+
+.content {
+  height: 90vh;
+}
+
+.side-nav {
+  background: $navColor;
+  //width: 200px;
+  height: 100%;
+  display: block;
+  nav > ul > li {
+   display: block;
+    padding: 30px 0;
+  }
+
+  li > a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px;
+    .icon-nav {
+      display: none;
+    }
+    &:hover {
+      border-left: 3px solid $logoColor;
+      .icon-nav {
+        font-size: 1.5rem;
+        color: $logoColor;
+        margin-left: 70px;
+        display: inline;
+      }
+    }
+  }
+}
+
+//Zadanie 2.2 Wiadomość i formularz
+
+.content-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80%;
+  position: relative;
+  .form-content {
+    background-color: $backgroundScreens;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    width: 90%;
+    padding-top: 50px;
+    position: absolute;
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    h2 {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    form {
+      text-align: center;
+      padding-top: 20px;
+      input {
+        font-size: 1rem;
+        font-weight: 500;
+        display: block;
+      }
+      button {
+        margin-top: 10px;
+        width: 150px;
+        height: 35px;
+      }
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      padding-top: 20px;
+    }
+    .success-message {
+      padding-top: 10px;
+      color: green;
+    }
+    .error-message {
+      padding-top: 10px;
+      color:red;
+    }
+  }
+}
+
+
+//Zadanie 3x polaczenie w calosc
+
+.section3 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section3-content {
+  width: 90%;
+  height: 90%;
+  .row1-content {
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .row2 {
+    height: 70%;
+  }
+}
+
+//zadanie 3.1 widget
+
+.widget-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+
+  .widget-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 140px;
+    width: 140px;
+    background: $backgroundScreens;
+    border: 1px dashed $successColor;
+    cursor: pointer;
+    &:last-child {
+      margin-left: 20px;
+    }
+
+    .widget-icon {
+      font-size: 3rem;
+      color: $successColor;
+      :hover{
+        opacity: 80%;
+      }
+    }
+    h1 {
+      color: $successColor;
+      font-size: 1rem;
+    }
+  }
+}
+
+//Zadanie 3.2
+.divSize{
+  width: 600px;
+  height: 45px;
+}
+ .boxForWidget {
+  width: 60%;
+  margin-top:10px;
+  .widgetNotification {
+    font-size: 18px;
+    max-height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 4px 4px 8px 4px;
+    background-color: white;
+    :first-child {
+      font-size: 28px;
+      display: inline-block;
+    }
+
+    h3 {
+      padding-left: 10px;
+      padding-bottom: 6px;
+      font-size: 1rem ;
+      text-align: left;
+      display: inline-block;
+    }
+    i:last-child:hover {
+      cursor: pointer;
+      opacity: 70%;
+      display: inline-block;
+    }
+  }
+}
+
+.note1 {
+  border: $infoColor dashed 1px;
+  color: $infoColor;
+  align-items: center;
+  i:last-child{
+    margin-left:0px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    padding: 0;
+  }
+}
+
+.note2 {
+  border: $warningColor dashed 1px;
+  color: $warningColor;
+  align-items: center;
+  i:last-child{
+    margin-left:279px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    padding: 0;
+    display: inline-block;
+  }
+}
+
+.note3 {
+  border: $successColor dashed 1px;
+  color: $successColor;
+  align-items: center;
+  i:last-child{
+    margin-left:42px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    padding: 0;
+  }
+
+}
+
+  //Zadanie 3.3
+
+  // grid 7 kolumn
+  $gutter-recipe: 12px;
+  $columns-recipe: 7;
+
+  .row-recipe {
+    width: 100%;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+
+  [class*="col-"] {
+    float: left;
+    padding: 0 $gutter-recipe;
+    min-height: 1px;
+  }
+
+
+  @for $i from 1 through $columns-recipe {
+    .container .row-recipe .col-recipe-#{$i} {
+      width: 100 / $columns-recipe * $i * 1%;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  // stylowanie
+  .body-recipe {
+    border-radius: 5px;
+    background: white;
+    background: $backgroundScreens;
+    font-family: "Open Sans", sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .container-recipe {
+    margin: 0 auto;
+  }
+
+  .row-recipe {
+    border-bottom: 1px solid $rowsColors;
+
+    &:last-child {
+      border-bottom: 0px solid white;
+    }
+  }
+
+  .box-recipe-plan {
+    text-align: center;
+    height: 35px;
+    color: $buttonsColor;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .box-recipe-days {
+    height: 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    color: $headingAndColumns;
+  }
+
+  .box-recipe {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 20px;
+    padding-right: 25px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    color: $rowsColors;
+  }
+
+  .move-recipe {
+    color: $buttonsColor;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    //margin-top: 20px;
+  }
+
+  .fas {
+    position: relative;
+    top: 3px;
+    font-size: 1.5rem;
+    padding: 7px;
+  }
+
+  .back-recipe {
+    position: relative;
+    right: 40px;
+    :hover{
+      opacity: 80%;
+    }
+  }
+
+  .forward-recipe {
+    position: relative;
+    left: 40px;
+    padding-right: 20px;
+    :hover{
+      opacity: 80%;
+    }
+  }
+
+      .pon {
+        padding-left: 10px;
+      }
+
+
+//Zadanie 4.1 Dodanie Nowego Przepisu (Stylowanie)
+//Troche za dużo zagnieżdzeń - max powinno być 3.
+.popup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  //background:rgba(255,255,255,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*flex-direction: column;*/
+  .addnewrecipe {
+    background-color: $backgroundScreens;
+    padding-top: 20px;
+    height: 90%;
+    width: 90%;
+    color: $rowsColors;
+        #alertsavedrecip {
+          color: red;
+        }
+       .instrukcion-content {
+         overflow-y: auto;
+         width: 50%;
+         height: 90%;
+         padding-left: 20px;
+         ul {
+           li {
+             padding-top: 10px;
+             font-size: 1rem;
+             i {
+               font-size: 0.8rem;
+               color: indianred;
+               display: inline-block;
+             }
+           }
+         }
+       }
+    .skladniki-content {
+      width: 50%;
+      height: 90%;
+      padding-left: 20px;
+      overflow-y: auto;
+      ul {
+
+        li {
+          padding-top: 10px;
+          font-size: 1rem;
+          i {
+            font-size: 0.8rem;
+            color: indianred;
+            display: inline-block;
+          }
+        }
+      }
+    }
+    > div:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid grey;
+      padding-bottom: 10px;
+      h1 {
+        color: $buttonsColor;
+      }
+      button {
+        width: 150px;
+        height: 35px;
+      }
+    }
+    input {
+      width: 100%
+    }
+    textarea {
+      width: 100%;
+      height: 80px;
+    }
+    i {
+      font-size: 1.8rem;
+      padding-left: 5px;
+      vertical-align: top;
+      color: $successColor;
+      cursor: pointer;
+    }
+  }
+}
+
+//zadanie 6.1. Layout
+
+.content-right-schedules {
+  height: 90%;
+  width: 90%;
+  background: $backgroundScreens;
+  border: 1px dotted $rowsColors;
+  border-radius: 5px;
+}
+.main-plan-content {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+}
+
+.first-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  border-bottom: 1px solid $rowsColors;
+  width: 100%;
+  p {
+    color: $logoColor;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .plan-btn {
+    width: 150px;
+    height: 30px;
+    background: $buttonsColor;
+    border: none;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+.plan-btn:hover{
+  opacity:80%;
+  cursor: pointer;
+}
+
+.second-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin-top: 5px;
+  p {
+    font-size: 1.2rem;
+    color: $headingAndColumns;
+    font-weight: bold;
+  }
+  form {
+    width: 80%;
+    input {
+      width: 100%;
+      height: 30px;
+      padding: 10px;
+    }
+  }
+}
+
+.third-plan {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  height: 80px;
+  p {
+    font-size: 1.2rem;
+    color: $headingAndColumns;
+    font-weight: bold;
+  }
+  form {
+    width: 80%;
+    input {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+    }
+  }
+}
+
+.fourth-plan {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid $rowsColors;
+  height: 40px;
+  p {
+    font-size: 1.2rem;
+    color: $headingAndColumns;
+    font-weight: bold;
+  }
+  form {
+    width: 30%;
+    margin-left: 20px;
+    input {
+      width: 20px;
+      height: 20px;
+
+    }
+  }
+}
+
+.food-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $headingAndColumns;
+  padding: 0.3rem;
+  text-align: center;
+  text-transform: uppercase;
+
+
+}
+
+.day-text {
+  font-size: 1rem;
+  color: $headingAndColumns;
+  padding: 0.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.input-food {
+  padding: 0.3rem;
+}
+
+.choose-food {
+  width: 100px;
+}
+
+.box-food {
+  border-bottom: 1px solid $rowsColors;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//Zadanie 6.2
+//Dodaje nową klase popup2Margin z powodu złego centrowania elementu planu.
+
+.popupMargin{
+  margin-left: 5%;
+  margin-top: 4%;
+}
+ 

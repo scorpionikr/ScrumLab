@@ -1,0 +1,33 @@
+.generalButton{
+    background-color: $buttonsColor;
+    color:white;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+.visible {
+  display: block;
+}
+.unvisible {
+  display: none;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.underboder {
+  border-bottom: 2px solid grey;
+}
+
+.border-left {
+  border-left: 3px solid $logoColor;
+}

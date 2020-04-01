@@ -1,0 +1,16 @@
+// CDN FONTAWESOME
+// <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+//
+// Sass:
+// https://fontawesome.com/how-to-use/on-the-web/using-with/sass
+
+// zmienilem kolejnosc importow bo kolejnosc ma znaczenie
+
+@import "reset.scss"; // reset,
+@import "fonts.scss"; // all webside fonts.
+@import "colors.scss"; // all colors,
+@import "grid.scss"; //grid
+@import "components.scss"; // all webside components like: buttons, menu, images etc,
+@import "layout.scss"; // all layout,
+@import "app.scss"; //all app,
+@import "recipies.scss"; // basic recipe look, based on 7 column grid

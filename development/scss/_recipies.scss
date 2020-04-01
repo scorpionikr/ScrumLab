@@ -1,0 +1,83 @@
+// zadanie 5.1
+.recipe-container {
+  background: white;
+  width: 73vw;
+  padding: 2rem;
+  border: 1px solid $rowsColors;
+}
+
+.recipes-table {
+  border-collapse: collapse;
+  margin-top: 2rem;
+  margin-left: 2.5%;
+  width: 95%;
+}
+
+.recipe-list-text {
+  color: $logoColor;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+th {
+  font-size: 1.2rem;
+  text-align: left;
+  &:nth-child(2) {
+    padding-left: 1rem;
+  }
+  &:nth-child(3) {
+    padding-left: 5rem;
+  }
+}
+
+.head-container {
+  border-bottom: 2px solid $rowsColors;
+}
+
+.table-row {
+  line-height: 1.5rem;
+  border-top: 1px solid $rowsColors;
+  &:last-child {
+    border-bottom: 1px solid $rowsColors;
+  }
+  text-align: left;
+}
+
+td {
+  &:nth-child(2) {
+    padding-left: 1rem;
+  }
+  &:nth-child(3) {
+    padding-left: 2rem;
+  }
+}
+
+.table-cell-text {
+  color: $rowsColors;
+}
+
+.fa-plus-square {
+  color:green;
+}
+
+.fa-trash-alt {
+  color: $buttonsColor;
+  padding: 0 8px;
+}
+
+.fa-edit {
+  color: $logoColor;
+  padding: 0 8px;
+}
+
+.recipe-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.head-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
