@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-        //kod ze snippetów:
+        //kod construktior dla Planow
         function Schedule (id, weekNumber, title, description) {
             this.id = id; // id przepisu
             this.title = title; // nazwa planu
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function(){
             this.friday = []; // plan na piątek
             this.saturday = []; // plan na sobotę
             this.sunday = []; // plan na niedzielę
-        };//koniec kodu ze snippetow.
+        };
 
 
     /*Metoda `.saveToLocalStorage()`
@@ -184,7 +184,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 Newplan.sunday.push(sunday[i].options[sunday[i].selectedIndex].value);
             }
 
-
             console.log(Newplan)
             Newplan.saveToLocalStorage();
 
@@ -222,10 +221,7 @@ document.addEventListener("DOMContentLoaded", function(){
         nametext.innerText = savedname;
     }
 
-
-
-
-
+    //Odczytaj plany z local storage
     let allPlanns = JSON.parse(localStorage.getItem('schedules'));
 
 
@@ -284,44 +280,25 @@ document.addEventListener("DOMContentLoaded", function(){
         for (i = 0; i < allPlanns.length; i++) {
             displayPlan(allPlanns[i]);
             weekFound = true;
-
         }
-
     }
 
     getplans ();
-
-
-    // Nie wime Magda po co to pisalas bez tego tez dziala chyba ze uwazasz ze musi byc
-    // if (weekFound === false) {
-    //     allPlanns.sort(function(a, b) {
-    //         return a.weekNumber - b.weekNumber;
-    //     });
-    //     for (i = 0; i < allPlanns.length; i++) {
-    //         if (weekNo < allPlanns[i].weekNumber) {
-    //             displayPlan(allPlanns[i]);
-    //             break;
-    //         }
-    //     }
-    // }
 
     //Nastepny plan
     const forwardBtn = document.querySelector('#forward');
 
     forwardBtn.addEventListener("click", function(){
-            const currentWeek = parseFloat(document.querySelector("#weekNo").innerHTML);
+        const currentWeek = parseFloat(document.querySelector("#weekNo").innerHTML);
 
         allPlanns.sort(function(a, b) {
             return a.weekNumber - b.weekNumber;
         });
-
             for (i = 0; i < allPlanns.length; i++) {
                 if (currentWeek < allPlanns[i].weekNumber) {
                     displayPlan(allPlanns[i]);
                 }
             }
-
-
         });
 
     //    Poprzedni plan
@@ -333,14 +310,10 @@ document.addEventListener("DOMContentLoaded", function(){
         // allPlanns.sort(function(a, b) {
         //     return b.weekNumber - a.weekNumber;
         // });
-
         for (i = 0; i < allPlanns.length; i++) {
             if (currentWeek > allPlanns[i].weekNumber) {
                 displayPlan(allPlanns[i]);
             }
         }
-
     });
-
-
 });
