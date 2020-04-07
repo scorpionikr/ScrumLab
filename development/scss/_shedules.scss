@@ -1,5 +1,5 @@
-// zadanie 5.1
-.recipe-container {
+// Lista planów
+.shedule-container {
   background: white;
   width: 90%;
   padding: 2rem;
@@ -8,14 +8,14 @@
   overflow-y: auto;
 }
 
-.recipes-table {
+.shedule-table {
   border-collapse: collapse;
   margin-top: 2rem;
   margin-left: 2.5%;
   width: 90%;
 }
 
-.recipe-list-text {
+.shedule-list-text {
   color: $logoColor;
   font-size: 1.3rem;
   width: 100%;
@@ -72,7 +72,7 @@ td {
   padding: 0 8px;
 }
 
-.recipe-container {
+.shedule-container {
   display: flex;
   flex-direction: column;
 }

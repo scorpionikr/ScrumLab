@@ -1,40 +1,66 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    //Zadanie 6.2.
-    
+    const beforelogin = document.querySelector("#beforelogin");
+
     let AllPlanns = [];
+    let nummberplans = checknumberofshedules()
+
+    //Sprawdzenie czy istnieja plany
+    if (localStorage.getItem("schedules") ==null || nummberplans ==0) {
+        const box_recipe_plan=document.querySelector(".box-recipe-plan")
+        box_recipe_plan.innerText = "Brak planów. Dodaj nowy plan!"
+    }
+
+
+    //Zadanie 6.2.
+
   
     //Dynamiczne tworzenie elementu HTML "option" w klasie "choose-food" w zalezności od ilości dodanych przepisów od użytkownika:
    function getrecipiesformlocal() {
-       let myRecipes=JSON.parse(localStorage.getItem("data"));
-       const planOptions = document.querySelectorAll('.choose-food');
-       planOptions.forEach(function(element) {
-           //Utworzenie tyle opcji o nazwie i value "title" ile jest obiektów w myRecipies:
-           for(let i=0;i<myRecipes.length;i++){
-               let singleOption=document.createElement('option')
-               singleOption.value=myRecipes[i].title
-               singleOption.innerHTML=myRecipes[i].title
-               element.appendChild(singleOption)
-
-           };
-       });
+       if (localStorage.getItem("data") !=null) {
+           let myRecipes = JSON.parse(localStorage.getItem("data"));
+           const planOptions = document.querySelectorAll('.choose-food');
+           planOptions.forEach(function (element) {
+               //Utworzenie tyle opcji o nazwie i value "title" ile jest obiektów w myRecipies:
+               for (let i = 0; i < myRecipes.length; i++) {
+                   let singleOption = document.createElement('option')
+                   singleOption.value = myRecipes[i].title
+                   singleOption.innerHTML = myRecipes[i].title
+                   element.appendChild(singleOption)
+               }
+           });
+           return myRecipes;
+       }
    }
-    getrecipiesformlocal()
+    let checkrecipe =   getrecipiesformlocal()
+
+    //Ustalenie miejsc formularza do poszczególnych zmiennych do zapisu w LocalStorage:
+    const savePlanBtn=document.querySelector(".plan-btn")
+    const titleName=document.querySelector("#plan-main");
+    const planDescription=document.querySelector("#description-plan");
+    const weekNumber=document.querySelector("#week-num")
+    const alertsavedplan=document.querySelector("#alertsavedplan")
+
 
     //Ustawienie przycisku "dodaj plan" aby przełączało do dodawania planu:
     const addPlanBtn=document.getElementById('addplan');
     const planSection=document.querySelector('.content-right-schedules');
     addPlanBtn.addEventListener('click', function(){
         alertsavedplan.innerText = ""
-        planSection.classList.add('popup', 'popupMargin');
+        titleName.value = ""
+        planDescription.value = ""
+        weekNumber.value = ""
+        if (localStorage.getItem("data") ==null || checkrecipe.length ==0) {
+            // const box_recipe_plan=document.querySelector(".box-recipe-plan")
+            alert("Brak przepisów! Najpierw dodaj nowy przepis!")
+        } else {
+            planSection.classList.add('popup');
+            planSection.classList.remove("unvisible")
+        }
+
     });
- 
-    //Ustalenie miejsc formularza do poszczególnych zmiennych do zapisu w LocalStorage:
-    const savePlanBtn=document.querySelector(".plan-btn")
-    const titleName=document.getElementById("plan-main");
-    const planDescription=document.getElementById("description-plan");
-    const weekNumber=document.getElementById("week-num")
-    const alertsavedplan=document.querySelector("#alertsavedplan")
+
+
     //Jedzenie do wyboru - dni i pory:
     //Poniedziałek:
     const foodMon1=document.querySelector('#mon__1');
@@ -136,6 +162,7 @@ document.addEventListener("DOMContentLoaded", function(){
             secondWidgetText.innerText="Świetnie masz już " + shedules + " planów";
             console.log("masz "+ shedules + " planow")
         }
+        return shedules
     }
 
     function  saveshedule () {
@@ -199,7 +226,8 @@ document.addEventListener("DOMContentLoaded", function(){
     //Zapisanie planu i zamkniecie okna
     savePlanBtn.addEventListener("click", function(event){
         setTimeout(function(){
-            planSection.classList.remove('popup', 'popupMargin');
+            planSection.classList.remove('popup');
+            planSection.classList.add('unvisible');
         }, 1000);
         saveshedule ();
         checknumberofshedules ();
@@ -277,43 +305,48 @@ document.addEventListener("DOMContentLoaded", function(){
 
     //Odczytaj plany
     function getplans () {
+        allPlanns.sort(function(a, b) {
+            return a.weekNumber - b.weekNumber;
+        });
         for (i = 0; i < allPlanns.length; i++) {
             displayPlan(allPlanns[i]);
             weekFound = true;
         }
+
     }
 
     getplans ();
+
+    let indexli = 0;
+
 
     //Nastepny plan
     const forwardBtn = document.querySelector('#forward');
 
     forwardBtn.addEventListener("click", function(){
-        const currentWeek = parseFloat(document.querySelector("#weekNo").innerHTML);
 
-        allPlanns.sort(function(a, b) {
-            return a.weekNumber - b.weekNumber;
-        });
-            for (i = 0; i < allPlanns.length; i++) {
-                if (currentWeek < allPlanns[i].weekNumber) {
-                    displayPlan(allPlanns[i]);
-                }
-            }
+
+        if (indexli >= allPlanns.length-1) {
+            indexli =0;
+        } else {
+            indexli +=1;
+        }
+        console.log(indexli)
+        displayPlan(allPlanns[indexli]);
         });
 
     //    Poprzedni plan
     const revBtn = document.querySelector('#reverse');
 
     revBtn.addEventListener("click", function() {
-        const currentWeek = parseFloat(document.querySelector("#weekNo").innerHTML);
-        //
-        // allPlanns.sort(function(a, b) {
-        //     return b.weekNumber - a.weekNumber;
-        // });
-        for (i = 0; i < allPlanns.length; i++) {
-            if (currentWeek > allPlanns[i].weekNumber) {
-                displayPlan(allPlanns[i]);
+
+        // displayPlan(allPlanns[indexli]);
+            if (indexli <= 0) {
+                indexli = allPlanns.length-1
+            }    else {
+                indexli -= 1;
             }
-        }
+        console.log(indexli)
+        displayPlan(allPlanns[indexli]);
     });
 });

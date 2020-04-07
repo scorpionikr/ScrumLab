@@ -258,6 +258,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (savedname == null) {
             recipe_container.style.display = ("none");
             beforelogin.classList.remove("unvisible")
+            console.log(beforelogin)
         }
 });
 

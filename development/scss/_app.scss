@@ -1,4 +1,4 @@
-//Zadanie 2.1
+  //Zadanie 2.1
 
 
 .logo{
@@ -191,9 +191,13 @@
   height: 45px;
 }
  .boxForWidget {
-  width: 60%;
+  width: 65%;
   margin-top:10px;
   .widgetNotification {
+    display: flex;
+    justify-content: space-between;
+    //flex-direction: column;
+    align-items: center;
     font-size: 18px;
     max-height: 40px;
     width: 100%;
@@ -225,7 +229,6 @@
   color: $infoColor;
   align-items: center;
   i:last-child{
-    margin-left:0px;
     margin-bottom: 20px;
     font-size: 1rem;
     padding: 0;
@@ -237,7 +240,6 @@
   color: $warningColor;
   align-items: center;
   i:last-child{
-    margin-left:279px;
     margin-bottom: 20px;
     font-size: 1rem;
     padding: 0;
@@ -250,7 +252,6 @@
   color: $successColor;
   align-items: center;
   i:last-child{
-    margin-left:42px;
     margin-bottom: 20px;
     font-size: 1rem;
     padding: 0;
@@ -478,16 +479,16 @@
 //zadanie 6.1. Layout
 
 .content-right-schedules {
-  height: 90%;
+
+}
+
+.main-plan-content {
   width: 90%;
+  height: 90%;
+  padding: 20px;
   background: $backgroundScreens;
   border: 1px dotted $rowsColors;
   border-radius: 5px;
-}
-.main-plan-content {
-  width: 100%;
-  height: 100%;
-  padding: 30px;
 }
 
 .first-plan {
@@ -525,7 +526,7 @@
   height: 30px;
   margin-top: 5px;
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: $headingAndColumns;
     font-weight: bold;
   }
@@ -545,7 +546,7 @@
   margin-top: 5px;
   height: 80px;
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: $headingAndColumns;
     font-weight: bold;
   }
@@ -566,7 +567,7 @@
   border-bottom: 1px solid $rowsColors;
   height: 40px;
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: $headingAndColumns;
     font-weight: bold;
   }
@@ -574,15 +575,15 @@
     width: 30%;
     margin-left: 20px;
     input {
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
 
     }
   }
 }
 
 .food-text {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: $headingAndColumns;
   padding: 0.3rem;
@@ -593,7 +594,7 @@
 }
 
 .day-text {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: $headingAndColumns;
   padding: 0.3rem;
   font-weight: 700;
@@ -602,6 +603,9 @@
 
 .input-food {
   padding: 0.3rem;
+  select {
+    font-size: 0.8rem;
+  }
 }
 
 .choose-food {
@@ -614,12 +618,3 @@
   justify-content: center;
   align-items: center;
 }
-
-//Zadanie 6.2
-//Dodaje nową klase popup2Margin z powodu złego centrowania elementu planu.
-
-.popupMargin{
-  margin-left: 5%;
-  margin-top: 4%;
-}
- 
