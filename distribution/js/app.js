@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(){
         closeWindow[i].addEventListener("click", function(){
             console.log(closeWindow[i])
             console.log(widget[i])
-            widget[i].classList.add("unvisible");
+            widget[i].style.display = ("none");
         });    
     };
 

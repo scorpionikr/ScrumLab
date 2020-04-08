@@ -5,19 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Zaplanuj Jedzonko</title>
+    <title>Zaplanuj Jedzonko - aplikacja</title>
     <link rel="stylesheet" href="./css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
           integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
-    <script src="js/recipes.js"></script>
+    <script src="js/schedules2.js"></script>
 </head>
 <body>
 <header class="header container">
     <h1 class="logo"><span>Zaplanuj</span><span>Jedzonko</span></h1>
-    <div class="name-logo"><span id="localsname">Imię</span><i class="fas fa-user-circle"></i></div>
+    <div class="name-logo"><span id="localsname"></span><i class="fas fa-user-circle"></i></div>
 </header>
 <main>
     <section class="container">
@@ -39,7 +39,579 @@
             </div>
 
             <div class="col-10 content-right">
-                <h1> Under Construction! </h1>
+                <h1 class=" unvisible" id="beforelogin">Najpierw się zaloguj, żeby wyswietlic plany!</h1>
+                <div class="shedule-container">
+                    <div class="head-container">
+                        <h3 class="shedule-list-text">LISTA PLANÓW</h3>
+                        <a href="#" id="addshedule"><i class="fas fa-plus-square fa-2x"></i></a>
+                    </div>
+                    <table class="shedule-table">
+                        <tbody id="shedule-table">
+                        <tr class="table-row">
+                            <th>ID</th>
+                            <th>NAZWA</th>
+                            <th>OPIS</th>
+                            <th>NR. TYGODNIA</th>
+                            <th>AKCJE</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+<!--                Kod Jakuba-->
+
+                <div class="content-right-schedules unvisible">
+                    <div class="main-plan-content">
+                        <div class="first-plan">
+                            <p>NOWY PLAN</p> <span id="alertsavedplan"></span>
+                            <button class="plan-btn">Zapisz i zamknij</button>
+                        </div>
+                        <div class="second-plan">
+                            <p>Nazwa planu</p>
+                            <form id="form-plan">
+                                <input id="plan-main" type="text" name="text" placeholder="Nazwa planu">
+                            </form>
+                        </div>
+                        <div class="third-plan">
+                            <p>Opis planu</p>
+                            <form id="sec-form-plan">
+                                <input id="description-plan" type="text" placeholder="Opis planu">
+                            </form>
+                        </div>
+                        <div class="fourth-plan">
+                            <p>Numer tygodnia</p>
+                            <form id="week">
+                                <input id="week-num" type="text" placeholder="">
+                            </form>
+                        </div>
+
+                        <section class="plan-section">
+                            <div class="container-plan">
+                                <div class="row box-food">
+                                    <div class="col-2"></div>
+                                    <div class="col-2">
+                                        <div class="food-text">Śniadanie</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="food-text">Drugie śniadanie</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="food-text">Zupa</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="food-text">Drugie danie</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="food-text">Kolacja</div>
+                                    </div>
+                                </div>
+                                <div class="row box-food">
+                                    <div class="col-2">
+                                        <div class="day-text">Poniedziałek</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food monday" id='mon__1' onClick="">
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food monday" id='mon__2'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food monday" id='mon__3'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food monday" id='mon__4'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food monday" id='mon__5'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row box-food">
+                                    <div class="col-2">
+                                        <div class="day-text">Wtorek</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food tuesday" id='tue__1'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food tuesday" id='tue__2'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food tuesday" id='tue__3'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food tuesday" id='tue__4'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food tuesday" id='tue__5'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row box-food">
+                                    <div class="col-2">
+                                        <div class="day-text">Środa</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food wednesday" id='wed__1'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food wednesday" id='wed__2'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food wednesday" id='wed__3'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food wednesday" id='wed__4'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food wednesday" id='wed__5'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row box-food">
+                                    <div class="col-2">
+                                        <div class="day-text">Czwartek</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food thursday" id='thu__1'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food thursday" id='thu__2'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food thursday" id='thu__3'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food thursday" id='thu__4'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food thursday" id='thu__5'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row box-food">
+                                    <div class="col-2">
+                                        <div class="day-text">Piątek</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food friday" id='fri__1'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food friday" id='fri__2'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food friday" id='fri__3'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food friday" id='fri__4'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food friday" id='fri__5'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row box-food">
+                                    <div class="col-2">
+                                        <div class="day-text">Sobota</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food saturday" id='sat__1'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food saturday" id='sat__2'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food saturday" id='sat__3'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food saturday" id='sat__4'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food saturday" id='sat__5'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row box-food">
+                                    <div class="col-2">
+                                        <div class="day-text">Niedziela</div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food sunday" id='sun__1'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food sunday" id='sun__2'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food sunday" id='sun__3'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food sunday" id='sun__4'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-food">
+                                            <form action="..">
+                                                <select class="choose-food sunday" id='sun__5'>
+                                                    <option>wybierz</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="" id="popupplan">
+                    <div class="container-recipe body-recipe2 col-11 left unvisible">
+                    <div class="row-recipe pb-10">
+                        <div class="col-recipe-4 ">
+                            <div class="box-recipe-plan2 ">
+                                Twój plan: <span id="planN"></span> na <span id="weekNo"></span> tydzień:
+                            </div>
+                        </div>
+                        <div class="col-recipe-3 right">
+                            <i class="fas fa-print printshedule"></i><button class="generalButton" id="closeplan_view">Zamknij</button>
+                        </div>
+                    </div>
+                    <div class="row-recipe">
+                        <div class="col-recipe-1">
+                            <div class="box-recipe-days">Poniedziałek</div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe-days">Wtorek</div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe-days">Środa</div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe-days">Czwartek</div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe-days">Piątek</div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe-days">Sobota</div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe-days">Niedziela</div>
+                        </div>
+                    </div>
+                    <div class="row-recipe">
+                        <div class="col-recipe-1">
+                            <div class="box-recipe pon" id="mon-0"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="tue-0"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="wed-0"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="thur-0"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="fr-0"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="st-0"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="sn-0"></div>
+                        </div>
+                    </div>
+                    <div class="row-recipe">
+                        <div class="col-recipe-1">
+                            <div class="box-recipe pon" id="mon-1"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="tue-1"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="wed-1"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="thur-1"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="fr-1"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="st-1"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="sn-1"></div>
+                        </div>
+                    </div>
+                    <div class="row-recipe">
+                        <div class="col-recipe-1">
+                            <div class="box-recipe pon" id="mon-2"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="tue-2"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="wed-2"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="thur-2"></div>
+                        </div>
+                        <div class="col-recipe-1" >
+                            <div class="box-recipe" id="fr-2"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="st-2"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="sn-2"></div>
+                        </div>
+                    </div>
+                    <div class="row-recipe">
+                        <div class="col-recipe-1">
+                            <div class="box-recipe pon" id="mon-3"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="tue-3"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="wed-3"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="thur-3"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="fr-3"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="st-3"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="sn-3"></div>
+                        </div>
+                    </div>
+                    <div class="row-recipe">
+                        <div class="col-recipe-1">
+                            <div class="box-recipe pon" id="mon-4"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="tue-4"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="wed-4"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="thur-4"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="fr-4"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="st-4"></div>
+                        </div>
+                        <div class="col-recipe-1">
+                            <div class="box-recipe" id="sn-4"></div>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+
             </div>
         </div>
     </section>

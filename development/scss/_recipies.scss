@@ -1,6 +1,6 @@
 // zadanie 5.1
 .recipe-container {
-  background: white;
+  background-color: $backgroundScreens;
   width: 90%;
   padding: 2rem;
   border: 1px solid $rowsColors;
@@ -58,6 +58,11 @@ td {
   color: $rowsColors;
 }
 
+.table-cell-name {
+  color: $rowsColors;
+  cursor: pointer;
+}
+
 .fa-plus-square {
   color:green;
 }
@@ -83,4 +88,74 @@ td {
   justify-content: space-between;
 
 }
+
+//Wysweitlanie przepisu:
+
+.popup-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  //background:rgba(255,255,255,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*flex-direction: column;*/
+  .addnewrecipe-view {
+    background-color: $backgroundScreens;
+    padding-top: 20px;
+    height: 90%;
+    width: 90%;
+    color: $rowsColors;
+      .instrukcion-content-view {
+        width: 50%;
+        padding-left: 20px;
+        height: 100%;
+        overflow-y: auto;
+          li {
+            padding-top: 10px;
+            font-size: 1rem;
+          }
+        }
+
+      .skladniki-content-view {
+        width: 50%;
+        height: 100%;
+        padding-left: 20px;
+        overflow-y: auto;
+
+        li {
+          padding-top: 10px;
+          font-size: 1rem;
+        }
+      }
+
+    > div:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid grey;
+      padding-bottom: 10px;
+      h1 {
+        color: $buttonsColor;
+      }
+      button {
+        width: 150px;
+        height: 35px;
+      }
+    }
+
+  }
+}
+
+//Drukowanie przepisu
+
+.printrecipe {
+  color: $buttonsColor;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
 

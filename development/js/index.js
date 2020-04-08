@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    //czysci loacl storage
+    //czysci local storage
 
     localStorage.clear();
 

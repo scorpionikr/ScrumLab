@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Zaplanuj Jedzonko</title>
+    <title>Zaplanuj Jedzonko - aplikacja</title>
     <link rel="stylesheet" href="./css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -16,7 +16,7 @@
   <body>
     <header class="header container">
       <h1 class="logo"><span>Zaplanuj</span><span>Jedzonko</span></h1>
-      <div class="name-logo"><span id="localsname">Imię</span><i class="fas fa-user-circle"></i></div>
+      <div class="name-logo"><span id="localsname"></span><i class="fas fa-user-circle"></i></div>
     </header>
     <main>
     <section class="container">
@@ -73,14 +73,14 @@
                 <div class="widgetNotification note2 flexbox"><div ><i class="fas fa-exclamation-circle"></i><h3 id="secondWidgetText">Pamiętaj, aby dodać plan!</h3></div><i class="fas fa-window-close"></i></div>
                 <div class="widgetNotification note3 flexbox"><div><i class="fas fa-check-circle"></i><h3>Świetnie, że jesteś! Udanego planowania i smacznego! :)</h3></div><i class="fas fa-window-close"></i></div>
                 </div>
-            </div>  
-                 
+            </div>
+
             <section class="body-recipe row row2">
-              <div class="container-recipe col-12">
+              <div class="container-recipe col-12 ">
                   <div class="row-recipe">
                       <div class="col-recipe-7">
                           <div class="box-recipe-plan">
-                              Twój plan na <span id="weekNo">{nr_tygodnia}</span> tydzień:
+                              Twój plan: <span id="planN"></span> na <span id="weekNo"></span> tydzień:
                           </div>
                       </div>
                   </div>
@@ -109,117 +109,117 @@
                   </div>
                   <div class="row-recipe">
                       <div class="col-recipe-1">
-                          <div class="box-recipe pon" id="mon-0">sniadanie</div>
+                          <div class="box-recipe pon" id="mon-0"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="tue-0">sniadanie</div>
+                          <div class="box-recipe" id="tue-0"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="wed-0">sniadanie</div>
+                          <div class="box-recipe" id="wed-0"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="thur-0">sniadanie</div>
+                          <div class="box-recipe" id="thur-0"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="fr-0">sniadanie</div>
+                          <div class="box-recipe" id="fr-0"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="st-0">sniadanie</div>
+                          <div class="box-recipe" id="st-0"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="sn-0">sniadanie</div>
-                      </div>
-                  </div>
-                  <div class="row-recipe">
-                      <div class="col-recipe-1">
-                          <div class="box-recipe pon" id="mon-1">drugie sniadanie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="tue-1">drugie sniadanie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="wed-1">drugie sniadanie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="thur-1">drugie sniadanie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="fr-1">drugie sniadanie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="st-1">drugie sniadanie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="sn-1">drugie sniadanie</div>
+                          <div class="box-recipe" id="sn-0"></div>
                       </div>
                   </div>
                   <div class="row-recipe">
                       <div class="col-recipe-1">
-                          <div class="box-recipe pon" id="mon-2">zupa</div>
+                          <div class="box-recipe pon" id="mon-1"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="tue-2">zupa</div>
+                          <div class="box-recipe" id="tue-1"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="wed-2">zupa</div>
+                          <div class="box-recipe" id="wed-1"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="thur-2">zupa</div>
+                          <div class="box-recipe" id="thur-1"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="fr-1"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="st-1"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="sn-1"></div>
+                      </div>
+                  </div>
+                  <div class="row-recipe">
+                      <div class="col-recipe-1">
+                          <div class="box-recipe pon" id="mon-2"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="tue-2"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="wed-2"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="thur-2"></div>
                       </div>
                       <div class="col-recipe-1" >
-                          <div class="box-recipe" id="fr-2">zupa</div>
+                          <div class="box-recipe" id="fr-2"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="st-2">zupa</div>
+                          <div class="box-recipe" id="st-2"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="sn-2">zupa</div>
-                      </div>
-                  </div>
-                  <div class="row-recipe">
-                      <div class="col-recipe-1">
-                          <div class="box-recipe pon" id="mon-3">drugie danie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="tue-3">drugie danie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="wed-3">drugie danie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="thur-3">drugie danie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="fr-3">drugie danie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="st-3">drugie danie</div>
-                      </div>
-                      <div class="col-recipe-1">
-                          <div class="box-recipe" id="sn-3">drugie danie</div>
+                          <div class="box-recipe" id="sn-2"></div>
                       </div>
                   </div>
                   <div class="row-recipe">
                       <div class="col-recipe-1">
-                          <div class="box-recipe pon" id="mon-4">kolacja</div>
+                          <div class="box-recipe pon" id="mon-3"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="tue-4">kolacja</div>
+                          <div class="box-recipe" id="tue-3"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="wed-4">kolacja</div>
+                          <div class="box-recipe" id="wed-3"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="thur-4">kolacja</div>
+                          <div class="box-recipe" id="thur-3"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="fr-4">kolacja</div>
+                          <div class="box-recipe" id="fr-3"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="st-4">kolacja</div>
+                          <div class="box-recipe" id="st-3"></div>
                       </div>
                       <div class="col-recipe-1">
-                          <div class="box-recipe" id="sn-4">kolacja</div>
+                          <div class="box-recipe" id="sn-3"></div>
+                      </div>
+                  </div>
+                  <div class="row-recipe">
+                      <div class="col-recipe-1">
+                          <div class="box-recipe pon" id="mon-4"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="tue-4"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="wed-4"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="thur-4"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="fr-4"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="st-4"></div>
+                      </div>
+                      <div class="col-recipe-1">
+                          <div class="box-recipe" id="sn-4"></div>
                       </div>
                   </div>
                   <div class="row-recipe">
@@ -290,19 +290,19 @@
                         <div class="second-plan">
                             <p>Nazwa planu</p>
                             <form id="form-plan">
-                                <input id="plan-main" type="text" name="text" placeholder="Plan jarski na bezmięsny tydzień">
+                                <input id="plan-main" type="text" name="text" placeholder="Nazwa planu">
                             </form>
                         </div>
                         <div class="third-plan">
                             <p>Opis planu</p>
                             <form id="sec-form-plan">
-                                <input id="description-plan" type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at accumsan purus">
+                                <input id="description-plan" type="text" placeholder="Opis planu">
                             </form>
                         </div>
                         <div class="fourth-plan">
                             <p>Numer tygodnia</p>
                             <form id="week">
-                                <input id="week-num" type="text" placeholder="5">
+                                <input id="week-num" type="text" placeholder="">
                             </form>
                         </div>
 
@@ -314,13 +314,13 @@
                                         <div class="food-text">Śniadanie</div>
                                     </div>
                                     <div class="col-2">
-                                        <div class="food-text">Drugie śniadanie</div>
+                                        <div class="food-text">Drugie śniad.</div>
                                     </div>
                                     <div class="col-2">
-                                        <div class="food-text">Zupa</div>
+                                        <div class="food-text">Obiad</div>
                                     </div>
                                     <div class="col-2">
-                                        <div class="food-text">Drugie danie</div>
+                                        <div class="food-text">Podwieczorek</div>
                                     </div>
                                     <div class="col-2">
                                         <div class="food-text">Kolacja</div>
@@ -334,7 +334,7 @@
                                         <div class="input-food">
                                             <form action="..">
                                                 <select class="choose-food monday" id='mon__1' onClick="">
-                                                        <option>wybierz</option>
+                                                    <option>wybierz</option>
                                                 </select>
                                             </form>
                                         </div>
@@ -360,9 +360,9 @@
                                     <div class="col-2">
                                         <div class="input-food">
                                             <form action="..">
-                                                    <select class="choose-food monday" id='mon__4'>
-                                                        <option>wybierz</option>
-                                                    </select>
+                                                <select class="choose-food monday" id='mon__4'>
+                                                    <option>wybierz</option>
+                                                </select>
                                             </form>
                                         </div>
                                     </div>

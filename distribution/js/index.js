@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    //czysci loacl storage
+    //czysci local storage
 
-    localStorage.clear();
+    // localStorage.clear();
 
     //Kod dla Caruseli Zadanie 1.2
 

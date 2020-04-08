@@ -1,6 +1,6 @@
 // Lista planów
 .shedule-container {
-  background: white;
+  background-color: $backgroundScreens;
   width: 90%;
   padding: 2rem;
   border: 1px solid $rowsColors;
@@ -58,6 +58,12 @@ td {
   color: $rowsColors;
 }
 
+
+.table-cell-name {
+  color: $rowsColors;
+  cursor: pointer;
+}
+
 .fa-plus-square {
   color:green;
 }
@@ -84,3 +90,31 @@ td {
 
 }
 
+//Wyswietl plany
+
+.body-recipe2 {
+  height: 90%;
+  background-color: $backgroundScreens;
+  padding: 20px;
+}
+
+.box-recipe-plan2 {
+  text-align: left;
+  height: 35px;
+  color: $buttonsColor;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#closeplan_view {
+  width: 150px;
+  height: 35px;
+}
+
+//Drukowanie planu:
+
+.printshedule {
+  color: $buttonsColor;
+  margin-right: 20px;
+  cursor: pointer;
+}

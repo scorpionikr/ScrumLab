@@ -258,6 +258,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function displayPlan(plan) {
         document.querySelector("#weekNo").innerHTML = plan.weekNumber;
+        document.querySelector("#planN").innerHTML = plan.title;
 
         document.querySelector("#mon-0").innerHTML = plan.monday[0];
         document.querySelector("#mon-1").innerHTML = plan.monday[1];
@@ -305,14 +306,15 @@ document.addEventListener("DOMContentLoaded", function(){
 
     //Odczytaj plany
     function getplans () {
-        allPlanns.sort(function(a, b) {
-            return a.weekNumber - b.weekNumber;
-        });
-        for (i = 0; i < allPlanns.length; i++) {
-            displayPlan(allPlanns[i]);
-            weekFound = true;
+        if (localStorage.getItem("schedules") !=null) {
+            allPlanns.sort(function (a, b) {
+                return a.weekNumber - b.weekNumber;
+            });
+            for (i = 0; i < allPlanns.length; i++) {
+                displayPlan(allPlanns[i]);
+                weekFound = true;
+            }
         }
-
     }
 
     getplans ();

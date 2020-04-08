@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const addrecipe = document.querySelector("#addrecipe");
     const closerecipe = document.querySelector("#closerecipe");
     const popup = document.querySelector("#popup");
+    const popup_view = document.querySelector("#popup_view");
     const namerecipe = document.querySelector("#namerecipe");
     const opisrecipe = document.querySelector("#opisrecipe");
     const instruktion = document.querySelector("#instruktion");
@@ -56,7 +57,13 @@ document.addEventListener("DOMContentLoaded", function(){
             tdId.classList.add('table-cell-text');
             newTr.appendChild(tdName);
             tdName.innerHTML = singleRecipe.title;
-            tdName.classList.add('table-cell-text');
+            tdName.classList.add('table-cell-name');
+                tdName.addEventListener('click', function () {
+                    const toView = this.parentElement;
+                    popup_view.classList.remove("unvisible")
+                    popup_view.classList.add("popup-view")
+                    viewRecipeFromLocalStorage(toView.firstElementChild.nextElementSibling.innerText);
+                });
             newTr.appendChild(tdDescription);
             tdDescription.innerHTML = singleRecipe.description;
             tdDescription.classList.add('table-cell-text');
@@ -253,11 +260,56 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
+    //Wyswietlanie przepisu z local storage
+    function viewRecipeFromLocalStorage (recip) {
+
+        if (localStorage.getItem("data") !=null) {
+            allRecipies = JSON.parse(localStorage.getItem("data")); // jeśli są to konwertujemy je i zapisujemy do zmiennej
+            console.log(recip)
+            // zwroc nowa tablice bez skasowanego elementu
+            let Recip = allRecipies.filter(function(element, index, array) {
+                return element.title == recip;
+            });
+            //wyswietl
+            const namerecipe_view = document.querySelector("#namerecipe_view");
+            const opisrecipe_view = document.querySelector("#opisrecipe_view");
+            const closerecipe_view = document.querySelector("#closerecipe_view");
+            const instrukcion_content_view = document.querySelector(".instrukcion-content-view");
+            const skladniki_content_view = document.querySelector(".skladniki-content-view");
+            namerecipe_view.innerText = Recip[0].title;
+            opisrecipe_view.innerText = Recip[0].description;
+            Recip[0].instructions.forEach(function(element, index, array) {
+                const toadd = document.createElement("li");
+                toadd.innerText = element
+                instrukcion_content_view.appendChild(toadd);
+            });
+            Recip[0].ingredients.forEach(function(element, index, array) {
+                const toadd = document.createElement("li");
+                toadd.innerText = element
+                skladniki_content_view.appendChild(toadd);
+            });
+            //Zamknij
+            closerecipe_view.addEventListener("click", function(event){
+                popup_view.classList.add("unvisible")
+                popup_view.classList.remove("popup-view")
+                location.reload();
+            });
+        }
+    }
+
 //    Poprawka zeby nie wysweitlaly sie przepisy jesli uzytkownik nie zalogowany
 
         if (savedname == null) {
             recipe_container.style.display = ("none");
             beforelogin.classList.remove("unvisible")
         }
+
+//        drukowanie przepisow:
+
+    const printrecipe = document.querySelector(".printrecipe");
+    printrecipe.addEventListener("click", function(event){
+        window.print();
+    });
+
 });
 
