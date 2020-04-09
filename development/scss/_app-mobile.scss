@@ -1,0 +1,355 @@
+//Logowanie
+
+.container .row .col-10 {
+  width: 100%;
+}
+
+.side-nav {
+  display: none;
+}
+
+.content {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-right {
+  height: 80%;
+  width: 100vw;
+  .form-content {
+
+    h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      padding-top: 20px;
+      font-size: 1.2rem;
+    }
+    form {
+      input {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+//Menu
+
+.navigation {
+  display: inline-block;
+}
+
+
+.list__navigation2 {
+  position: fixed;
+  top: 70px;
+  left: 0px;
+  background-color: $headingAndColumns;
+  width: 100%;
+  padding: initial;
+  padding-left: 30px;
+}
+
+nav > ul > li {
+  display: block;
+  padding: 5px 0;
+  font-size: 1rem;
+  :active{
+    opacity: 80%;
+    color:$logoColor;
+  }
+}
+
+.header {
+  .name-logo {
+    margin: 30px 0;
+    color: $logoColor;
+    font-size: 1.5rem;
+    span {
+      color: white;
+      font-size: 1.2rem;
+      margin-right: 20px;
+    }
+    i {
+      display: block;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+//Wyswietlanie sekcji 3
+
+.section3 {
+  //padding-top: 30px;
+  width: 90vw;
+  //height: 80vh;
+ }
+.section3-content {
+  width: 90vw;
+  height: 90%;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  //flex-direction: column;
+  .row1-content {
+    height: initial;
+    //padding-top: 30px;
+    flex-direction: column;
+  }
+  .row2 {
+    //height: max-content;
+
+  }
+}
+
+//zadanie 3.1 widget
+
+.widget-div {
+
+}
+
+//Zadanie 3.2
+.divSize{
+  width: 100%;
+  //height: 45px;
+}
+
+
+.boxForWidget {
+  width: 90vw;
+  max-width: 100%;
+  margin-top:10px;
+  .widgetNotification {
+    font-size: 1rem;
+    :first-child {
+      font-size: 1.5rem;
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 0.8rem;
+
+    }
+  }
+}
+
+//Zadanie 3.3
+
+// stylowanie
+.body-recipe {
+  width: 100%;
+  height: max-content;
+  //overflow-x: initial;
+}
+
+
+.box-recipe-plan {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.box-recipe-days {
+  font-size: 0.5rem;
+}
+
+.box-recipe {
+  font-size: 0.5rem;
+  line-height: 1rem;
+  padding-right: 1rem;
+  padding-left: 0.8rem;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  color: $rowsColors;
+}
+
+.move-recipe {
+  color: $buttonsColor;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  //margin-top: 20px;
+}
+
+.fas {
+  position: relative;
+  top: 3px;
+  font-size: 1.5rem;
+  padding: 7px;
+}
+
+.back-recipe {
+  position: relative;
+  right: 40px;
+  :hover{
+    opacity: 80%;
+  }
+}
+
+.forward-recipe {
+  position: relative;
+  left: 40px;
+  padding-right: 20px;
+  :hover{
+    opacity: 80%;
+  }
+}
+
+.pon {
+  padding-left: 10px;
+}
+
+
+//Zadanie 4.1 Dodanie Nowego Przepisu (Stylowanie)
+
+.popup {
+  width: 100%;
+  height: 100%;
+
+    .addnewrecipe {
+      background-color: $backgroundScreens;
+      padding-top: 10px;
+      height: 90%;
+      width: 90%;
+      font-size: 0.5rem;
+      .instrukcion-content {
+        overflow-y: auto;
+        width: 50%;
+        height: 90%;
+        padding-left: 20px;
+        ul {
+          li {
+            padding-top: 10px;
+            font-size: 0.5rem;
+            i {
+              font-size: 0.5rem;
+              color: $buttonsColor;
+              display: inline-block;
+            }
+          }
+        }
+      }
+      .skladniki-content {
+        width: 50%;
+        height: 90%;
+        padding-left: 20px;
+        overflow-y: auto;
+        ul {
+
+          li {
+            padding-top: 10px;
+            font-size: 0.5rem;
+            i {
+              font-size: 0.5rem;
+              color: $buttonsColor;
+              display: inline-block;
+            }
+          }
+        }
+      }
+      > div:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid grey;
+        padding-bottom: 10px;
+        h1 {
+          color: $buttonsColor;
+        }
+        button {
+          width: 150px;
+          height: 35px;
+        }
+      }
+      input {
+        width: 100%
+      }
+      textarea {
+        width: 100%;
+        height: 80px;
+      }
+      i {
+        font-size: 1.8rem;
+        padding-left: 5px;
+        vertical-align: top;
+        color: $successColor;
+        cursor: pointer;
+      }
+    }
+  }
+
+//Dodanie planu
+
+
+.main-plan-content {
+  width: 90%;
+}
+
+.first-plan {
+  p {
+    color: $logoColor;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+}
+
+.second-plan {
+  p {
+    font-size: 0.8rem;
+    color: $headingAndColumns;
+    font-weight: bold;
+  }
+}
+
+.third-plan {
+  p {
+    font-size: 0.8rem;
+    color: $headingAndColumns;
+    font-weight: bold;
+  }
+}
+
+.fourth-plan {
+  p {
+    font-size: 0.8rem;
+    color: $headingAndColumns;
+    font-weight: bold;
+  }
+
+  form {
+
+    input {
+      margin-left: initial;
+
+    }
+  }
+}
+
+.food-text {
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: $headingAndColumns;
+  padding: 0.2rem;
+
+}
+
+.day-text {
+  font-size: 0.5rem;
+  color: $headingAndColumns;
+  padding: 0.2rem;
+}
+
+.input-food {
+  padding: 0.2rem;
+  select {
+    width: 1rem;
+    font-size: 0.5rem;
+  }
+}
+

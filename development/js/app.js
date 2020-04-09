@@ -1,5 +1,22 @@
 document.addEventListener("DOMContentLoaded", function(){
 
+
+    //Nawigacja mobile
+    const hamburger = document.querySelector('.hamburger button');
+    const menu = document.querySelector('.list__navigation2');
+    const navigation = document.querySelector('.navigation');
+    hamburger.addEventListener('click', function(){
+        menu.classList.toggle('visible');
+        menu.classList.toggle('unvisible');
+    });
+
+    const mobile = window.matchMedia("screen and (max-width: 767px)");
+    mobile.addListener(function(){
+        if (mobile.matches) {
+            navigation.classList.remove('visible');
+        }
+    });
+
     //Zadanie 2.2 formularz
 
     const form = document.querySelector("#form-name");

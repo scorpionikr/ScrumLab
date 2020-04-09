@@ -21,8 +21,8 @@ body{
   background: $headingAndColumns;
 }
 nav > ul > li {
-    display: inline;
-    padding: 0 40px;
+    display: inline-block;
+    padding: 0 30px;
     :hover{
       opacity: 80%;
       color:$logoColor;
@@ -64,7 +64,7 @@ li > a {
     width: 60%;
   }
   li {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     display: none;
     text-align: center;
     h1 {
@@ -90,7 +90,7 @@ li > a {
     width: 60%;
     h2 {
       font-size: 26px;
-      font-weight: 300;
+      font-weight: 700;
       padding-bottom: 10px;
     }
     p {
@@ -143,24 +143,30 @@ li > a {
 
 //zadanie 1.5.
 .newsletter {
-  height: 100px;
   color: white;
   background-color: $navColor;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 30px 30px;
 
   h3 {
-    font-size: 26px;
-    font-weight: 300;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 50%;
+    text-align: left;
   }
-
+  form {
+    text-align: right;
+    width: 50%;
+  }
   input {
     width: 200px;
     height: 35px;
   }
 
   button {
+    margin-left: 10px;
     width: 100px;
     height: 35px;
   }
@@ -224,6 +230,7 @@ footer{
   }
   button{
     padding:5px;
+    margin-left: 10px;
   }
 }
 

@@ -388,7 +388,7 @@
 
 
 //Zadanie 4.1 Dodanie Nowego Przepisu (Stylowanie)
-//Troche za dużo zagnieżdzeń - max powinno być 3.
+
 .popup {
   position: absolute;
   width: 100%;
@@ -421,7 +421,7 @@
              font-size: 1rem;
              i {
                font-size: 0.8rem;
-               color: indianred;
+               color: $buttonsColor;
                display: inline-block;
              }
            }
@@ -439,7 +439,7 @@
           font-size: 1rem;
           i {
             font-size: 0.8rem;
-            color: indianred;
+            color: $buttonsColor;
             display: inline-block;
           }
         }
@@ -576,6 +576,7 @@
     width: 30%;
     margin-left: 20px;
     input {
+      margin-left: 30px;
       width: 30px;
       height: 30px;
 

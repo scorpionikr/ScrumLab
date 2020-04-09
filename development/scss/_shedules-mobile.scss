@@ -1,0 +1,82 @@
+
+.container .row .col-10 {
+  width: 100%;
+}
+
+.shedule-container {
+  width: 95%;
+}
+
+.shedule-table {
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.shedule-list-text {
+  color: $logoColor;
+  font-size: 1.2rem;
+}
+
+th {
+  font-size: 0.5rem;
+  text-align: left;
+  &:nth-child(2) {
+    padding-left: 1rem;
+  }
+  &:nth-child(3) {
+    padding-left: 1rem;
+  }
+}
+
+.table-row {
+  line-height: 1.5rem;
+}
+
+td {
+  &:nth-child(2) {
+    padding-left: 1rem;
+  }
+  &:nth-child(3) {
+    padding-left: 1rem;
+  }
+}
+
+.table-cell-text {
+  color: $rowsColors;
+  font-size: 0.6rem;
+}
+
+
+.table-cell-name {
+  color: $rowsColors;
+  cursor: pointer;
+  font-size: 0.6rem;
+}
+
+//Wyswietlanie planu
+.body-recipe2 {
+  height: 90%;
+  background-color: $backgroundScreens;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+.box-recipe-plan2 {
+  text-align: left;
+  height: 35px;
+  color: $buttonsColor;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#closeplan_view {
+  width: 65px;
+  height: 35px;
+}
+
+.printshedule {
+  margin-right: 5px;
+  font-size: 1rem;
+}

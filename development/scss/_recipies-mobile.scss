@@ -1,0 +1,107 @@
+/// zadanie 5.1
+
+.container .row .col-10 {
+  width: 100%;
+}
+
+#beforelogin {
+  text-align: center;
+}
+
+.recipe-container {
+  background-color: $backgroundScreens;
+  width: 95%;
+  padding: 2rem;
+  border: 1px solid $rowsColors;
+  height: 90%;
+  overflow-y: auto;
+}
+
+
+.recipe-list-text {
+  color: $logoColor;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+th {
+  font-size: 0.8rem;
+  text-align: left;
+  &:nth-child(2) {
+    padding-left: 1rem;
+  }
+  &:nth-child(3) {
+    padding-left: 5rem;
+  }
+}
+
+.head-container {
+  border-bottom: 2px solid $rowsColors;
+}
+
+.table-row {
+  line-height: 1.5rem;
+  border-top: 1px solid $rowsColors;
+  &:last-child {
+    border-bottom: 1px solid $rowsColors;
+  }
+  text-align: left;
+}
+
+td {
+  &:nth-child(2) {
+    padding-left: 1rem;
+  }
+  &:nth-child(3) {
+    padding-left: 1rem;
+  }
+}
+
+
+//Wysweitlanie przepisu:
+
+.popup-view {
+font-size: 0.5rem;
+  .addnewrecipe-view {
+    background-color: $backgroundScreens;
+    padding-top: 10px;
+    .instrukcion-content-view {
+      width: 50%;
+      padding-left: 20px;
+      height: 100%;
+      overflow-y: auto;
+      li {
+        padding-top: 10px;
+        font-size: 0.5rem;
+      }
+    }
+
+    .skladniki-content-view {
+      width: 50%;
+      height: 100%;
+      padding-left: 20px;
+      overflow-y: auto;
+
+      li {
+        padding-top: 10px;
+        font-size: 0.5rem;
+      }
+    }
+
+    > div:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid grey;
+      padding-bottom: 10px;
+      h1 {
+        color: $buttonsColor;
+      }
+      button {
+        width: 150px;
+        height: 35px;
+      }
+    }
+
+  }
+}

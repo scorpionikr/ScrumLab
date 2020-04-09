@@ -1,10 +1,8 @@
-// CDN FONTAWESOME
-// <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-//
-// Sass:
-// https://fontawesome.com/how-to-use/on-the-web/using-with/sass
+//Czcionki i ikony
 
-// zmienilem kolejnosc importow bo kolejnosc ma znaczenie
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Charmonman:400,700&display=swap&subset=latin-ext');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css');
 
 @import "reset.scss"; // reset,
 @import "fonts.scss"; // all webside fonts.
@@ -16,6 +14,31 @@
 @import "recipies.scss"; // basic recipe look, based on 7 column grid
 @import "shedules.scss"; // plany
 
+
+//navigacja
+
+.list__navigation {
+  @media screen and (min-width: 768px){
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .hamburger {
+    display: none;
+  }
+}
+
+//Drukowanie
 @media print {
   @import 'print';
+}
+
+
+//Mobile
+@media screen and (max-width: 768px){
+  @import "layout-mobile.scss"; // all layout,
+  @import "app-mobile.scss"; //all app,
+  @import "recipies-mobile.scss"; // basic recipe look, based on 7 column grid
+  @import "shedules-mobile.scss"; // plany
 }

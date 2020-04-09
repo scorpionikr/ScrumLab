@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Zaplanuj Jedzonko</title>
     <link rel="stylesheet" href="./css/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
     <script src="js/index.js"></script>
   </head>
   <body>
     <header class="header container">
       <h1 class="logo"><span>Zaplanuj</span><span>Jedzonko</span></h1>
       <nav>
-        <ul>
+        <div class="hamburger pr-30">
+          <button>
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <ul class="list__navigation unvisible">
           <li>
             <a href="#zaplanuj">ZAPLANUJ POSILKI!</a>
           </li>
@@ -39,15 +39,15 @@
         <ul>
           <li class="visible"><h1>Dzięki tej aplikacji zaplanujesz plany żywienia!</h1> Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. </li>
           <li><h1>Dodasz nowe przepisy, które wykorzystasz w swoich planach!</h1> Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. </li>
-          <li><h1>Będziesz mogł wyświetlać zapisane przepisy i plany na ekranie oraz je drukować! </h1> Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, l</li>
+          <li><h1>Będziesz mógł wyświetlać zapisane przepisy i plany na ekranie oraz je drukować! </h1> Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, l</li>
         </ul>
         <i class="fas fa-arrow-right rightarrow"></i>
       </div>
     </section>
-    <section  class="calltoaction container pl-30 pr-30">
+    <section  class="calltoaction container pl-30 pr-30" id="zaplanuj">
       <!-- CTA + button -->
       <div>
-        <h2 id="zaplanuj">Uruchom aplikacje "Zaplanuj jedzonko"</h2>
+        <h2>Uruchom aplikacje "Zaplanuj jedzonko"</h2>
         <p>Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim.</p>
       </div>
       <a href="app.html"><button class="generalButton">Uruchom aplikacje</button></a>
@@ -102,7 +102,7 @@
         </div>
       </div>
     </section>
-    <footer class="container" id="kontakt">
+    <footer class="container pl-30 pr-30" id="kontakt">
       <!-- copyright -->
       <div class="flexbox">
         <div class="footerElements"><h3>Lorem ipsum dolor sit.</h3><p>Consectetur adipiscing elit. Sed at bibendum nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> </div>
@@ -118,14 +118,14 @@
         <div class="footerElements">
           <h3>Lorem ipsum amet.</h3>
           <form><input type="text" name="email" placeholder=""><button class="generalButton" type="submit">Lorem</button></form>
-          <div class="socialMedia flexbox">
+          <div class="socialMedia">
             <a href="#"><i class="fab fa-facebook-square"></i></a>
             <a href="#"><i class="fab fa-twitter-square"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
           </div> 
         </div>
       </div>
-      <div class="ender">Copyright <span> ZaplanujJedzonko.pl</span></div>
     </footer>
+    <div class="ender">Copyright <span> ZaplanujJedzonko.pl</span></div>
   </body>
 </html>
