@@ -23,7 +23,7 @@ gulp.task("serve", function(cb) {
 gulp.task("sass", function() {
   return gulp
     .src("development/scss/**/*.scss")
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass({errLogToConsole: true, outputStyle: 'compressed'}).on("error", sass.logError))
     .pipe(sourcemaps.init())
     .pipe(
       autoprefixer({
